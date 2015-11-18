@@ -38,15 +38,15 @@ Argon.Vuforia.initialize({
       setupChipsContent(dataSet.trackables.chips) 
     }).then(api.startObjectTracker) 
       .then(api.hintMaxSimultaneousImageTargets.bind(api, 2)) 
-});
+  })
 
 function setupStonesContent( stonesEntity ) { 
     // create an Object3D from the stones entity 
     var stones = three.argon.objectFromEntity(stonesEntity) 
     // create a box 
-    var box = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 50), new THREE.MeshNormalMaterial())
+    var box = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 50), new THREE.MeshNormalMaterial()) 
     box.position.y = 25 
-    var boxSpin = 0
+    var boxSpin = 0 
     // add and spin the box when the stones trackable is found 
     stones.addEventListener('argon:found', function() { 
       stones.add(box) 
@@ -62,7 +62,7 @@ function setupStonesContent( stonesEntity ) {
       if (boxSpin > 0) boxSpin -= 10 * three.Time.delta 
       else boxSpin = 0 
     }) 
-  }  
+  } 
 
 function setupChipsContent( chipsEntity ) { 
     // create an Object3D from the chips entity 
