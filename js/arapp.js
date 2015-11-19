@@ -88,7 +88,7 @@ var modelPromise = getModel()
     return modelPromise = modelPromise || new Promise(function(resolve, reject) { 
       // load the model 
       var loader = new THREE.JSONLoader() 
-      loader.load( 'monster.js', function ( geometry, materials ) { 
+      loader.load( 'json/monster.json', function ( geometry, materials ) { 
         materials[0].morphTargets = true 
         var faceMaterial = new THREE.MeshFaceMaterial( materials ) 
         var morphMesh = new THREE.MorphAnimMesh( geometry, faceMaterial ) 
